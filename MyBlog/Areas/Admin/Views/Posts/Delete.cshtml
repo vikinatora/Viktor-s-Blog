@@ -1,0 +1,32 @@
+﻿@model PostEditingBindingModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete post @Model.Title</h2>
+
+<form asp-area="admin" asp-controller="posts" asp-action="DeletePost" method="post" asp-route-id="@Model.Id" class="form-horizontal">
+    <div class="form-group row">
+        <label asp-for="Title" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <input type="text" readonly class="form-control-plaintext" value="@Model.Title">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Body" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <textarea class="form-control" readonly asp-for="Body">@Model.Body</textarea>
+            <span asp-validation-for="Body"></span>
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        <div class=" col-sm-10 col-sm-push-2">
+            <input type="submit" value="Delete post" class="btn btn-success" />
+            <a asp-area="" asp-controller="home" asp-action="index">Cancel</a>
+        </div>
+    </div>
+
+</form>

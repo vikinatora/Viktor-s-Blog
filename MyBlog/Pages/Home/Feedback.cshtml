@@ -1,0 +1,31 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model MyBlog.Pages.FeedbackModel
+@{
+    ViewData["Title"] = "Feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Feedback</h2>
+
+<form asp-page-handler="Send" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Feedback</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" asp-for="Feedback"></textarea>
+            <span asp-validation-for="Feedback"></span>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class=" col-sm-10 col-sm-push-2">
+            <input type="submit" value="Send Feedback" class="btn btn-success" />
+            <a asp-area="" asp-controller="home" asp-action="index">Cancel</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

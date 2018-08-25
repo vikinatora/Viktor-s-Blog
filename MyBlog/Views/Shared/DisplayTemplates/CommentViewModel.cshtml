@@ -1,0 +1,14 @@
+﻿@model CommentViewModel
+
+<div class="media">
+    <a class="pull-left" href="#">
+        <img class="media-object" src="~/images/avatars/@(Model.Avatar)">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">
+            @Model.Author
+            <small>@Model.DatePosted</small>
+        </h4>
+        @Model.Message
+    </div>
+</div>

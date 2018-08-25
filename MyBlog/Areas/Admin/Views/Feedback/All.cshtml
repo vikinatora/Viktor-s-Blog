@@ -1,0 +1,65 @@
+﻿@model FeedbackViewModel
+@{
+    ViewData["Title"] = "Feedback";
+}
+
+<div class="btn btn-info newBtn">See new feedback</div>
+<div class="btn btn-danger oldBtn">See old feedback</div>
+
+
+<h2 class="text-center newFeed ">New feedback</h2>
+<table class="table table-striped newFeed">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Feedback</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var feedback in Model.New)
+        {
+            <tr>
+                <td> @feedback.Author.UserName</td>
+                <td>@feedback.Author.Email</td>
+                <td>@feedback.Message</td>
+
+                <td>
+                    <a asp-area="admin" asp-controller="feedback" asp-action="ChangeFeedbackStatus" asp-route-id="@feedback.Id" class="btn btn-info">Mark as read</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<h2 class="text-center oldFeed">Read feedback</h2>
+<table class="table table-striped oldFeed">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Feedback</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var feedback in Model.Read)
+        {
+            <tr>
+                <td> @feedback.Author.UserName</td>
+                <td>@feedback.Author.Email</td>
+                <td>@feedback.Message</td>
+
+                <td>
+                    <a asp-area="admin" asp-controller="feedback" asp-action="ChangeFeedbackStatus" asp-route-id="@feedback.Id" class="btn btn-info">Mark as unread</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+@section Scripts{ 
+    <script src="~/js/MyScripts/feedback.js"></script>
+}

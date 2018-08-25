@@ -1,0 +1,17 @@
+﻿@model SearchViewModel
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Results.Any())
+{
+    <h2>Search results for:  "@Model.SearchTerm"</h2>
+    <ul>
+        @Html.DisplayFor(model => model.Results)
+    </ul>
+}
+else
+{
+    <h2>No search results found. :(</h2>
+}

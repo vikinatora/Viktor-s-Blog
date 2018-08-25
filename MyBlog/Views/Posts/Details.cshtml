@@ -1,0 +1,38 @@
+﻿@model PostDetailsViewModel
+@{
+    ViewData["Title"] = Model.Post.Title;
+}
+<!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                @Html.DisplayFor(m => m.Post)
+
+                <!-- Blog Comments -->
+                @if (Model.Comments.Any())
+                {
+                    @Html.DisplayFor(m=>m.Comments)
+                }
+
+                <hr>
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form" asp-controller="comments" asp-action="add">
+                        <input type="hidden" name="postId" value="@Model.Post.Id" />
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

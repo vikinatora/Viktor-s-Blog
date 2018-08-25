@@ -1,0 +1,30 @@
+﻿@model UsersConciseViewModel
+
+<tr>
+    <td> @Model.Username</td>
+    <td>@Model.Email</td>
+    <td>@Model.CommentsCount</td>
+
+    <td>
+        <a asp-area="moderator" asp-controller="comments" asp-action="all" asp-route-id="@Model.Id" class="btn btn-info">View user comments</a>
+        @if (Model.IsModerator)
+        {
+            <a asp-area="admin" asp-controller="Users" asp-action="Demote" asp-route-id="@Model.Id" class="btn btn-primary">Demote moderator</a>
+        }
+        else
+        {
+            <a asp-area="admin" asp-controller="Users" asp-action="MakeModerator" asp-route-id="@Model.Id" class="btn btn-primary">Make moderator</a>
+        }
+
+        @if (Model.IsBanned)
+        {
+            <a asp-area="admin" asp-controller="Users" asp-action="Unban" asp-route-id="@Model.Id" class="btn btn-danger">Unban</a>
+        }
+        else
+        {
+            <a asp-area="admin" asp-controller="Users" asp-action="Ban" asp-route-id="@Model.Id" class="btn btn-danger">Ban</a>
+        }
+
+    </td>
+</tr>
+

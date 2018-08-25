@@ -1,0 +1,26 @@
+﻿@page
+@model MyBlog.Pages.Home.AboutModel
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-4">
+    <h2 class="about text-center">About me</h2>
+    <p class="info info-about lead">My name is Viktor Todorov, I'm from Sliven, Bulgaria and I'm 19 years old. I love deep talks especially about the meaning of life and the universe. I also like cats and cars like any other man.In my free time I love going out with friends, playing multiplayer games together, programming or procrastinating by watching Youtube.</p>
+</div>
+<div class="col-md-4">
+    <h2 class="education text-center">Education</h2>
+    <p class="info info-education lead">I've graduated PGPZE "Zaharii Stoyanov" Sliven. This year I got accepted in Sofia Technical University with Informatic and Applied Mathematics. I've got B2 certificate in German and Certificate in Advanced English(C1). I've been studying C# for 1 year in Sofia Software University and next summer I'm going to graduate it and hopefully I'm going to find a real job as an intern or a junior developer if I've acquired the needed skills and knowledge by then.</p>
+</div>
+<div class="col-md-4">
+    <h2 class="purpose text-center">Purpose of this blog</h2>
+    <p class="info info-purpose lead">This blog is going to be my course project for the C# MVC Frameworks course and my first attempt at creating a "serious" website. I'm going to continue developing it, adding more functionality, making it more user friendly and maybe one day I will publish it with the purpose of a personal blog/diary where I will write about my life and what has been going on if I find It internet worthy.</p>
+
+</div>
+
+
+@section Scripts{ 
+    <script src="~/js/MyScripts/about.js"></script>
+}

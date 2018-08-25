@@ -1,0 +1,36 @@
+﻿@model PostCreationBindingModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create a new post</h2>
+<form asp-area="admin" asp-controller="posts" asp-action="create" method="post" class="form-horizontal">
+    @Html.FormGroupFor(model => model.Title)
+    <span asp-validation-for="Title"></span>
+
+    <div class="form-group">
+        <label asp-for="Body" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <textarea class="form-control" asp-for="Body"></textarea>
+            <span asp-validation-for="Body"></span>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="CategoryId" class="form-control" asp-items="@Model.Categories"></select>
+            <span asp-validation-for="Categories"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class=" col-sm-10 col-sm-push-2">
+            <input type="submit" value="Create post" class="btn btn-success" />
+            <a asp-area="" asp-controller="home" asp-action="index">Cancel</a>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    }

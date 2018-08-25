@@ -1,0 +1,17 @@
+﻿@model CommentViewModel
+
+<tr>
+    <td> @Model.Author</td>
+    <td>@Model.Message</td>
+    <td>@Model.DatePosted</td>
+
+    <td>
+        <a asp-area="moderator" asp-controller="comments" asp-action="all" asp-route-id="@Model.AuthorId" class="btn btn-info">View user comments</a>
+        @if (!Model.IsAuthorAdmin)
+        {
+            <a asp-area="moderator" asp-controller="comments" asp-action="delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete comment</a>
+        }
+
+    </td>
+</tr>
+

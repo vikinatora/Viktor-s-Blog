@@ -1,0 +1,29 @@
+﻿@model PostsHomeViewModel
+
+<!-- Page Content -->
+            <!-- Blog Post -->
+            <!-- Title -->
+            <a asp-action="details" asp-controller="posts" asp-route-id="@Model.Id"><h1>@Model.Title</h1></a>
+
+            <!-- Author -->
+            <p class="lead">
+                by Viktor Todorov
+            </p>
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p><span class="glyphicon glyphicon-time"></span> Posted on @Model.DatePosted</p>
+
+            <hr>
+
+            <!-- Preview Image -->
+            <img class="img-responsive" src="~/images/banners/@(Model.CategoryBanner)">
+
+            <hr>
+
+            <!-- Post Content -->
+            <p class="lead">@Model.Body</p>
+
+            <hr>
+

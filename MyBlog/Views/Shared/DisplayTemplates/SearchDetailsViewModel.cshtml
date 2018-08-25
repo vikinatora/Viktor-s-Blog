@@ -1,0 +1,8 @@
+﻿@model MyBlog.Common.ViewModels.SearchDetailsViewModel
+
+<li>
+    <a href="@(Url.Page($"/posts/Details",new { id = Model.PostId }))">
+        @Html.Raw(Model.PostTitle)
+    </a>
+    with @(Model.CommentsCount) comments
+</li>

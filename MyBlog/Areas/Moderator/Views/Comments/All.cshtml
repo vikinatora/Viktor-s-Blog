@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CommentViewModel>
+@{
+    ViewData["Title"] = "All comments";
+}
+
+<h2 class="text-center">Last 30 comments</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Comment</th>
+            <th>Date Posted</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>

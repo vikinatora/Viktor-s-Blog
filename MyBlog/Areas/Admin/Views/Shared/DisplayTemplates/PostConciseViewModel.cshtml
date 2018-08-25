@@ -1,0 +1,12 @@
+﻿@model PostConciseViewModel
+
+<tr>
+    <td> @Model.Title</td>
+    <td>@Model.Category</td>
+    <td>@Model.DatePosted</td>
+    <td>
+        <a asp-area="admin" asp-controller="posts" asp-action="edit" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+        <a asp-area="admin" asp-controller="posts" asp-action="delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
+
