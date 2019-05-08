@@ -1,5 +1,4 @@
 # Viktor-s-Blog
-# oxl
 ## Introduction
 ### Viktor's Blog website is a project as a mandatory exam requirement for the course "C# MVC Frameworks - ASP.NET Core July 2018" by SoftUni.
 ## Description
